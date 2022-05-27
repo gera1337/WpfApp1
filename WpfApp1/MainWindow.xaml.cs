@@ -49,7 +49,7 @@ namespace WpfApp1
                 password.ToolTip = "";
                 password.Background = Brushes.Transparent;
                 MessageBox.Show("все хорошо");
-                users user=new users(login,password)
+                users user = new users(login, password);
                 
                 
                 db.users.Find(user);

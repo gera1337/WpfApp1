@@ -17,9 +17,22 @@ namespace WpfApp1
     
     public partial class PizzaOrdersEntities : DbContext
     {
+        private static PizzaOrdersEntities _context;
+
+
         public PizzaOrdersEntities()
             : base("name=PizzaOrdersEntities")
         {
+        }
+
+        public static PizzaOrdersEntities getcontext()
+        {
+            if(_context== null)
+            {
+                _context = new PizzaOrdersEntities();
+
+            }
+            return _context;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
